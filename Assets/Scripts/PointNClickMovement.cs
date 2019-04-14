@@ -8,53 +8,42 @@ public class PointNClickMovement : MonoBehaviour
 	private Rigidbody2D rigidBody;
 	private Vector2 currentPosition;
 	private Vector2 targetPosition;
+	private WalkablePath walkablePath;
+	private Collider2D walkablePathCollider;
 
-	public float speed = 100;
-	//public Vector2 journey;
-	//public Vector2 gap;
-	//public double stopThreshold = .05;
+	public float speed = 20;
 
 	// Start is called before the first frame update
 	void Start()
     {
 		rigidBody = GetComponent<Rigidbody2D>();
+		rigidBody.transform.position = ClampPosition(rigidBody.transform.position);
+		walkablePath = FindObjectOfType<WalkablePath>();
+		walkablePathCollider = walkablePath.GetComponent<Collider2D>();
+		currentPosition = ClampPosition(rigidBody.transform.position);
+		targetPosition = currentPosition;
 	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
-		currentPosition = rigidBody.transform.position;
-
-		//if (Input.GetMouseButtonDown(0))
-		//{
-		//	targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		//	journey.x = targetPosition.x - currentPosition.x;
-		//	journey.y = targetPosition.y - currentPosition.y;
-		//	rigidBody.velocity = new Vector2(
-		//			journey.normalized.x * speedX * Time.deltaTime,
-		//			journey.normalized.y * speedY * Time.deltaTime
-		//		);
-		//}
+		currentPosition = ClampPosition(rigidBody.transform.position);
 
 		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			targetPosition = ClampPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+			targetPosition = walkablePathCollider.ClosestPoint(targetPosition);
 		}
 
 		maxDistance = Time.deltaTime * speed;
-
-		rigidBody.transform.position = Vector3.MoveTowards(rigidBody.transform.position, targetPosition, maxDistance);
+		rigidBody.transform.position = walkablePathCollider.ClosestPoint(Vector2.MoveTowards(rigidBody.transform.position, targetPosition, maxDistance));
 	}
 
+	private Vector2 ClampPosition(Vector2 position)
+	{
+		Vector2 clamped_position = new Vector2((int)position.x, (int)position.y);
+		position = clamped_position;
 
-	//private void LateUpdate()
-	//{
-	//	currentPosition = rigidBody.transform.position;
-	//	gap.x = Mathf.Abs(targetPosition.x) - Mathf.Abs(currentPosition.x);
-	//	gap.y = Mathf.Abs(targetPosition.y) - Mathf.Abs(currentPosition.y);
-	//	if (stopThreshold > Mathf.Abs(gap.x) && stopThreshold > Mathf.Abs(gap.y))
-	//	{
-	//		rigidBody.velocity = new Vector2(0, 0);
-	//	}
-	//}
+		return position;
+	}
 }
