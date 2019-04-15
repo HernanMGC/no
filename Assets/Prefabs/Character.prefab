@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  pixelsPerUnit: 6
+  positionThreshold: 1
 --- !u!212 &7247999701113157418
 SpriteRenderer:
   m_ObjectHideFlags: 0
