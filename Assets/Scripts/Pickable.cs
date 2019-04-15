@@ -55,6 +55,16 @@ public class Pickable : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
+		this.CheckPick(collider);
+	}
+
+	void OnTriggerStay2D(Collider2D collider)
+	{
+		this.CheckPick(collider);
+	}
+
+	private void CheckPick(Collider2D collider)
+	{
 		PointNClickController character = this.gameManager.GetCharacterController();
 		GameObject characterGO = character.gameObject;
 		Debug.Log("!!!");
@@ -65,26 +75,9 @@ public class Pickable : MonoBehaviour
 		{
 			if (!character.IsMoving())
 			{
-				gameManager.SendMessage("ObjectPicked", this);
-				Destroy(this);
-			} 
-		}
-	}
-
-	void OnTriggerStay2D(Collider2D collider)
-	{
-		PointNClickController character = this.gameManager.GetCharacterController();
-		GameObject characterGO = character.gameObject;
-		Debug.Log("!!!");
-		Debug.Log(character);
-		Debug.Log(characterGO);
-		Debug.Log(character.GetPickingIntention());
-		if (collider.gameObject == characterGO && character.GetPickingIntention() == this)
-		{
-			if (! character.IsMoving())
-			{
 				gameManager.SendMessage("ObjectPicked", this.gameObject);
 				Destroy(this.gameObject);
+				this.tooltip.gameObject.SetActive(false);
 			}
 		}
 	}

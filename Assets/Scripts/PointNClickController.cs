@@ -12,6 +12,7 @@ public class PointNClickController : MonoBehaviour
 	private Collider2D walkablePathCollider;
 	private bool isMoving;
 	private Pickable pickingIntention;
+	private Animator animator;
 
 	public float speed = 20;
 	public float positionThreshold = 1;
@@ -20,6 +21,7 @@ public class PointNClickController : MonoBehaviour
 	void Start()
     {
 		this.rigidBody = GetComponent<Rigidbody2D>();
+		this.animator = GetComponent<Animator>();
 		this.rigidBody.transform.position = this.ClampPosition(this.rigidBody.transform.position);
 		this.walkablePath = FindObjectOfType<WalkablePath>();
 		this.walkablePathCollider = this.walkablePath.GetComponent<Collider2D>();
@@ -47,7 +49,21 @@ public class PointNClickController : MonoBehaviour
 		if (isMoving)
 		{
 			maxDistance = Time.deltaTime * this.speed;
-			this.rigidBody.transform.position = this.walkablePathCollider.ClosestPoint(Vector2.MoveTowards(this.rigidBody.transform.position, this.targetPosition, maxDistance));
+			Vector2 newPosition = this.walkablePathCollider.ClosestPoint(Vector2.MoveTowards(this.rigidBody.transform.position, this.targetPosition, maxDistance));
+			if ((targetPosition.x - currentPosition.x) >=0 )
+			{
+				this.transform.localScale = new Vector3(Math.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+
+			} else
+			{
+				this.transform.localScale = new Vector3(-Math.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+
+			}
+			this.rigidBody.transform.position = newPosition;
+			this.animator.SetBool("playerIsMoving", true);
+		} else
+		{
+			this.animator.SetBool("playerIsMoving", false);
 		}
 	}
 
