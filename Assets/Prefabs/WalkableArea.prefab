@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7283512181192497405}
   - component: {fileID: 7283512181192497406}
   m_Layer: 8
-  m_Name: DormWalkable
+  m_Name: WalkableArea
   m_TagString: WalkablePath
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7283512181192497401}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.5, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -91,7 +91,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: c42bd1e4d75a6ee46ae54372df7452ba, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -114,10 +114,10 @@ PolygonCollider2D:
       - {x: -123.03252, y: -70.32702}
       - {x: -100.29414, y: -71.42254}
       - {x: -78.37897, y: -52.238823}
-      - {x: -0.94284177, y: -49.164383}
-      - {x: 11.211734, y: -63.477837}
-      - {x: 68.061104, y: -62.86804}
-      - {x: 84.766624, y: -81.98021}
+      - {x: -8.400395, y: -49.164383}
+      - {x: 5.152467, y: -66.27297}
+      - {x: 58.73914, y: -66.59488}
+      - {x: 75.91076, y: -81.98021}
       - {x: 105.95394, y: -82.66667}
 --- !u!114 &7283512181192497406
 MonoBehaviour:

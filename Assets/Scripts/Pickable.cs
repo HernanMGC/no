@@ -13,9 +13,10 @@ public class Pickable : MonoBehaviour
 	public string hoverText;
 	public string itemName;
 	public Sprite itemSprite;
+	public Item item;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 		this.gameManager = FindObjectOfType<GameManager>();
 		this.tooltip = this.gameManager.GetTooltip();
@@ -67,10 +68,6 @@ public class Pickable : MonoBehaviour
 	{
 		PointNClickController character = this.gameManager.GetCharacterController();
 		GameObject characterGO = character.gameObject;
-		Debug.Log("!!!");
-		Debug.Log(character);
-		Debug.Log(characterGO);
-		Debug.Log(character.GetPickingIntention());
 		if (collider.gameObject == characterGO && character.GetPickingIntention() == this)
 		{
 			if (!character.IsMoving())

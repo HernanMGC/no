@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PointNClickController : MonoBehaviour
 {
@@ -13,15 +14,23 @@ public class PointNClickController : MonoBehaviour
 	private bool isMoving;
 	private Pickable pickingIntention;
 	private Animator animator;
+	private GameManager gameManager;
+	private CharacterPhrases characterPhrases;
+	private GameObject characterSprite;
 
 	public float speed = 20;
 	public float positionThreshold = 1;
+	public GameObject characterPhrasesPosition;
 
 	// Start is called before the first frame update
 	void Start()
-    {
-		this.rigidBody = GetComponent<Rigidbody2D>();
-		this.animator = GetComponent<Animator>();
+	{
+		this.characterPhrasesPosition = this.transform.Find("PromptPosition").gameObject;
+		this.characterSprite = this.transform.Find("CharacterSprite").gameObject;
+
+		this.gameManager = FindObjectOfType<GameManager>();
+		this.rigidBody = this.GetComponent<Rigidbody2D>();
+		this.animator = characterSprite.GetComponent<Animator>();
 		this.rigidBody.transform.position = this.ClampPosition(this.rigidBody.transform.position);
 		this.walkablePath = FindObjectOfType<WalkablePath>();
 		this.walkablePathCollider = this.walkablePath.GetComponent<Collider2D>();
@@ -29,6 +38,25 @@ public class PointNClickController : MonoBehaviour
 		this.targetPosition = this.currentPosition;
 		this.isMoving = false;
 		this.pickingIntention = null;
+		this.characterPhrases = this.gameManager.GetCharacterPhrases();
+	}
+
+	public void CharacterSay(string phrase)
+	{
+		Debug.Log("!!Say: " + phrase + " for " + this.gameManager.GetWaitTime(phrase) + " seconds");
+		StartCoroutine(ShowCharacterSay(phrase, this.gameManager.GetWaitTime(phrase)));
+	}
+
+	IEnumerator ShowCharacterSay(string phrase, float time)
+	{
+		Debug.Log("Say: " + phrase + " for " + time + " seconds");
+		this.characterPhrases.GetComponent<RectTransform>().position = new Vector2(this.characterPhrasesPosition.transform.position.x, this.characterPhrasesPosition.transform.position.y);
+		this.characterPhrases.gameObject.GetComponent<TextMeshPro>().SetText(phrase);
+		this.characterPhrases.gameObject.SetActive(true);
+		yield return new WaitForSeconds(time);
+
+		Debug.Log("Sacabos");
+		this.characterPhrases.gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -52,11 +80,11 @@ public class PointNClickController : MonoBehaviour
 			Vector2 newPosition = this.walkablePathCollider.ClosestPoint(Vector2.MoveTowards(this.rigidBody.transform.position, this.targetPosition, maxDistance));
 			if ((targetPosition.x - currentPosition.x) >=0 )
 			{
-				this.transform.localScale = new Vector3(Math.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+				characterSprite.transform.localScale = new Vector3(Math.Abs(characterSprite.transform.localScale.x), characterSprite.transform.localScale.y, characterSprite.transform.localScale.z);
 
 			} else
 			{
-				this.transform.localScale = new Vector3(-Math.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+				characterSprite.transform.localScale = new Vector3(-Math.Abs(characterSprite.transform.localScale.x), characterSprite.transform.localScale.y, characterSprite.transform.localScale.z);
 
 			}
 			this.rigidBody.transform.position = newPosition;
