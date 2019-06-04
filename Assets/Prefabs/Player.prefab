@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &600890987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -360,8 +360,9 @@ GameObject:
   - component: {fileID: 7247999701113157416}
   - component: {fileID: 7247999701113157417}
   - component: {fileID: 1183499902}
+  - component: {fileID: 1163584036186073998}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7247999701113157414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8547b4cc46d6f9247b60adbc6df54f6c, type: 3}
   m_Name: 
@@ -445,3 +446,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.17, y: 4.92}
   m_EdgeRadius: 0
+--- !u!114 &1163584036186073998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247999701113157414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da185c5f21d35745958a650a6ee3fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  speed: 20
+  positionThreshold: 1
