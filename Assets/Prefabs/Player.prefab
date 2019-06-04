@@ -458,6 +458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da185c5f21d35745958a650a6ee3fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  speed: 20
-  positionThreshold: 1
+  animator: {fileID: 2075565474}
+  inputHoldDelay: 0.5
+  baseSpeed: 2
+  acceleration: 20
+  stoppingDistance: 0.15
+  slowingSpeed: 0.175
