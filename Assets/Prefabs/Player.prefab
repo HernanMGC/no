@@ -357,7 +357,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7247999701113157415}
-  - component: {fileID: 7247999701113157416}
   - component: {fileID: 7247999701113157417}
   - component: {fileID: 1183499902}
   - component: {fileID: 1163584036186073998}
@@ -384,21 +383,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7247999701113157416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7247999701113157414}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8547b4cc46d6f9247b60adbc6df54f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  positionThreshold: 2
-  characterPhrasesPosition: {fileID: 0}
 --- !u!50 &7247999701113157417
 Rigidbody2D:
   serializedVersion: 4
@@ -415,7 +399,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: c42bd1e4d75a6ee46ae54372df7452ba, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
@@ -462,5 +446,5 @@ MonoBehaviour:
   inputHoldDelay: 0.5
   baseSpeed: 2
   acceleration: 20
-  stoppingDistance: 0.15
-  slowingSpeed: 0.175
+  stoppingDistance: 2
+  slowingSpeed: 20

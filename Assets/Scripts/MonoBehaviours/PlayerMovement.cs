@@ -111,7 +111,18 @@ public class PlayerMovement : MonoBehaviour
 		this.destinationPosition = this.walkablePathCollider.ClosestPoint(pData.pointerCurrentRaycast.worldPosition);
 	}
 
-	private IEnumerator WaitForInteraction()
+    public void OnInteractableClick(Interactable interactable)
+    {
+        if (!handleInput)
+        {
+            return;
+        }
+
+        this.currentInteractable = interactable;
+        this.destinationPosition = currentInteractable.interactionLocation.position;
+    }
+
+    private IEnumerator WaitForInteraction()
 	{
 		this.handleInput = false;
 

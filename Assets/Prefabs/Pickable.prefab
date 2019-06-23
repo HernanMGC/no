@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5038965027034870882}
   - component: {fileID: 5038965027034870883}
-  - component: {fileID: 5038965027034870885}
   - component: {fileID: 1751753362141203868}
   m_Layer: 0
   m_Name: Pickable
@@ -82,22 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5038965027034870885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038965027034870880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12ab5833da5a4e643834f9c9717dcdc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickedText: "Has cogido una poci\xF3n"
-  hoverText: Pocion!!!
-  itemName: "Poci\xF3n"
-  itemSprite: {fileID: 21300000, guid: 69dabaae6a7cd78488ba68bd93bbd52c, type: 3}
 --- !u!61 &1751753362141203868
 BoxCollider2D:
   m_ObjectHideFlags: 0

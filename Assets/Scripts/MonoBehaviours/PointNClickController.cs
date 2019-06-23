@@ -41,11 +41,11 @@ public class PointNClickController : MonoBehaviour
 		this.characterPhrases = this.gameManager.GetCharacterPhrases();
 	}
 
-	public void CharacterSay(string phrase)
-	{
-		Debug.Log("!!Say: " + phrase + " for " + this.gameManager.GetWaitTime(phrase) + " seconds");
-		StartCoroutine(ShowCharacterSay(phrase, this.gameManager.GetWaitTime(phrase)));
-	}
+	//public void CharacterSay(string phrase)
+	//{
+		//Debug.Log("!!Say: " + phrase + " for " + this.gameManager.GetWaitTime(phrase) + " seconds");
+		//StartCoroutine(ShowCharacterSay(phrase, this.gameManager.GetWaitTime(phrase)));
+	//}
 
 	IEnumerator ShowCharacterSay(string phrase, float time)
 	{
