@@ -99,9 +99,11 @@ public class PlayerMovement : MonoBehaviour
 
 	public void OnGroundClick(BaseEventData data)
 	{
-		if (!this.handleInput)
-		{
-			return;
+        Debug.Log("OnGroundClick");
+        if (!this.handleInput)
+        {
+            Debug.Log("OnGroundClick: !handleInput");
+            return;
 		}
 
 		this.currentInteractable = null;
@@ -113,8 +115,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnInteractableClick(Interactable interactable)
     {
+        Debug.Log("OnInteractableClick");
         if (!handleInput)
         {
+            Debug.Log("OnInteractableClick: !handleInput");
             return;
         }
 
@@ -124,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator WaitForInteraction()
 	{
-		this.handleInput = false;
+        this.handleInput = false;
 
 		yield return inputHoldWait;
 
