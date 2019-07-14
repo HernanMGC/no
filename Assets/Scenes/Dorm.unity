@@ -199,6 +199,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &530097103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4972b6d749158c248bacaaf0c6dbcd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: -5721897520680476043, guid: d32eb3d352904254b9446c440129ba01,
+    type: 2}
+  satisfied: 1
+--- !u!114 &559262887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebe04bf6f4b2ee42bb00f9ab1260f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  item: {fileID: 11400000, guid: a7922621e4d215b41b90d16d3a8f4bf2, type: 2}
 --- !u!114 &600890988 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 600890988, guid: f6d297f477d7ff644900d8d41252653f,
@@ -211,6 +240,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd32f59e822cb9348ad96d2adac3a452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &631952177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: PickedUpPotion
+  satisfied: 1
+  hash: 1759046469
+--- !u!114 &641860240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4972b6d749158c248bacaaf0c6dbcd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: 8711920560924112645, guid: d32eb3d352904254b9446c440129ba01,
+    type: 2}
+  satisfied: 1
 --- !u!1 &670998679
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +345,72 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670998679}
   m_Enabled: 1
+--- !u!114 &749730808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff36e5984d6d0e54dbdc1a8079c83519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: NoPotion
+  requiredConditions:
+  - {fileID: 631952177}
+  reactionCollection: {fileID: 0}
+--- !u!1 &874854515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874854516}
+  - component: {fileID: 874854517}
+  m_Layer: 0
+  m_Name: PickedUpPotionReaction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874854516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874854515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1715980370}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &874854517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874854515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afc52cbf3b89b044a250e68cf8d9bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactions: []
+--- !u!1 &1183054545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5038965027034870880, guid: ed1140125803fe64ebe42ac5cd721dc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5038965027506834545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1331481247 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8899919902788169421, guid: c0e6ae07cf6b0df498e53a742f0fb412,
@@ -653,6 +778,50 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1668935478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22082b22fb8df2e4b874b1c7763fa0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  gameObject: {fileID: 1183054545}
+  activeState: 0
+--- !u!4 &1715980370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2087491936977381294}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937207525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6414262986073131716, guid: 0449a746152c668429d54e933cd17ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2087491936977381294}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1937207527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937207525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afc52cbf3b89b044a250e68cf8d9bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactions:
+  - {fileID: 1668935478}
+  - {fileID: 559262887}
+  - {fileID: 530097103}
+  - {fileID: 641860240}
 --- !u!224 &1991844149 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4155396518001726083, guid: 14b258516e89a6748995e3a2d8dff3d1,
@@ -855,6 +1024,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -70
       objectReference: {fileID: 0}
+    - target: {fileID: 7018245166446529158, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: conditionCollections.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018245166446529158, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: conditionCollections.Array.data[0]
+      value: 
+      objectReference: {fileID: 749730808}
+    - target: {fileID: 7018245166446529158, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: defaultReactionCollection
+      value: 
+      objectReference: {fileID: 1937207527}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0449a746152c668429d54e933cd17ab5, type: 3}
 --- !u!1001 &4155396516633801654
@@ -1150,6 +1334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038965027034870880, guid: ed1140125803fe64ebe42ac5cd721dc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5038965027034870882, guid: ed1140125803fe64ebe42ac5cd721dc2,
         type: 3}

@@ -70,6 +70,13 @@ public class PlayerMovement : MonoBehaviour
 	{
 		this.animator.SetBool("playerIsMoving", false);
 		this.transform.position = this.destinationPosition;
+
+        if (currentInteractable)
+        {
+            currentInteractable.Interact();
+            currentInteractable = null;
+            StartCoroutine(WaitForInteraction());
+        }
     }
 
     private void Slowing(float distanceToDestination)
