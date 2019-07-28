@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 7283512181192497400}
   - component: {fileID: 7283512181192497407}
   - component: {fileID: 7283512181192497405}
-  - component: {fileID: 7283512181192497406}
   - component: {fileID: 1536696482811888768}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WalkableArea
   m_TagString: WalkablePath
   m_Icon: {fileID: 0}
@@ -41,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7283512181192497401}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -70,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 999
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0928d0a349a76cd479593b0b4a4f7532, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
@@ -120,18 +119,6 @@ PolygonCollider2D:
       - {x: 58.73914, y: -66.59488}
       - {x: 75.91076, y: -81.98021}
       - {x: 105.95394, y: -82.66667}
---- !u!114 &7283512181192497406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7283512181192497401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffca1964d4683c243b2cb0fb4f563002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1536696482811888768
 MonoBehaviour:
   m_ObjectHideFlags: 0
