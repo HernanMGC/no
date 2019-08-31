@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6472332853339218638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: HasChicken
+  m_EditorClassIdentifier: 
+  description: HasChicken
+  satisfied: 0
+  hash: -573082424
+--- !u!114 &-4470571022575611546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: PickedUpBook
+  m_EditorClassIdentifier: 
+  description: PickedUpBook
+  satisfied: 0
+  hash: -2145257371
+--- !u!114 &-3543703763408912436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: HasPOS
+  m_EditorClassIdentifier: 
+  description: HasPOS
+  satisfied: 0
+  hash: 1714291993
+--- !u!114 &-1433293269513310980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: PickedUpPOS
+  m_EditorClassIdentifier: 
+  description: PickedUpPOS
+  satisfied: 0
+  hash: -289607197
+--- !u!114 &-910182014314807557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: HasCV
+  m_EditorClassIdentifier: 
+  description: HasCV
+  satisfied: 0
+  hash: 584076029
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ae31689bbbfbc4a97eadd6dbb78458, type: 3}
+  m_Name: AllConditions
+  m_EditorClassIdentifier: 
+  conditions:
+  - {fileID: 2112538999434184190}
+  - {fileID: 8065522537786397281}
+  - {fileID: 3953829085240431865}
+  - {fileID: -4470571022575611546}
+  - {fileID: -3543703763408912436}
+  - {fileID: -1433293269513310980}
+  - {fileID: -910182014314807557}
+  - {fileID: 7107646194134638190}
+  - {fileID: -6472332853339218638}
+  - {fileID: 6810605709340178172}
+--- !u!114 &2112538999434184190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: HasPotion
+  m_EditorClassIdentifier: 
+  description: HasPotion
+  satisfied: 1
+  hash: -1101346022
+--- !u!114 &3953829085240431865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: HasBook
+  m_EditorClassIdentifier: 
+  description: HasBook
+  satisfied: 0
+  hash: -574525037
+--- !u!114 &6810605709340178172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: PickedUpChicken
+  m_EditorClassIdentifier: 
+  description: PickedUpChicken
+  satisfied: 0
+  hash: 651541133
+--- !u!114 &7107646194134638190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: PickedUpCV
+  m_EditorClassIdentifier: 
+  description: PickedUpCV
+  satisfied: 0
+  hash: -1199679963
+--- !u!114 &8065522537786397281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be71ce26766386408c616aebf66055d, type: 3}
+  m_Name: PickecUpPotion
+  m_EditorClassIdentifier: 
+  description: PickecUpPotion
+  satisfied: 0
+  hash: 213485196
