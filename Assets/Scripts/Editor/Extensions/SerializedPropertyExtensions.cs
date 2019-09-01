@@ -17,6 +17,20 @@ public static class SerializedPropertyExtensions
         arrayProperty.serializedObject.ApplyModifiedProperties();
     }
 
+    public static void AddToObjectArrayAt<T>(this SerializedProperty arrayProperty, T elementToAdd, int index)
+        where T : Object
+    {
+        if (!arrayProperty.isArray)
+            throw new UnityException("SerializedProperty " + arrayProperty.name + " is not an array.");
+
+        arrayProperty.serializedObject.Update();
+
+        arrayProperty.InsertArrayElementAtIndex(index);
+        arrayProperty.GetArrayElementAtIndex(index).objectReferenceValue = elementToAdd;
+
+        arrayProperty.serializedObject.ApplyModifiedProperties();
+    }
+
 
     public static void RemoveFromObjectArrayAt(this SerializedProperty arrayProperty, int index)
     {
@@ -30,9 +44,11 @@ public static class SerializedPropertyExtensions
             throw new UnityException("SerializedProperty " + arrayProperty.name + " has only " + arrayProperty.arraySize + " elements so element " + index + " cannot be removed.");
 
         arrayProperty.serializedObject.Update();
+
         if (arrayProperty.GetArrayElementAtIndex(index).objectReferenceValue)
             arrayProperty.DeleteArrayElementAtIndex(index);
         arrayProperty.DeleteArrayElementAtIndex(index);
+
         arrayProperty.serializedObject.ApplyModifiedProperties();
     }
 
@@ -46,19 +62,51 @@ public static class SerializedPropertyExtensions
         if (!elementToRemove)
             throw new UnityException("Removing a null element is not supported using this method.");
 
-        arrayProperty.serializedObject.Update();
+        int index = arrayProperty.GetIndexOfObjectInArray(elementToRemove);
+
+        if (index != -1) {
+            arrayProperty.RemoveFromObjectArrayAt(arrayProperty.GetIndexOfObjectInArray(elementToRemove));
+            return;
+        }
+
+        throw new UnityException("Element " + elementToRemove.name + "was not found in property " + arrayProperty.name);
+    }
+
+    public static int GetIndexOfObjectInArray<T>(this SerializedProperty arrayProperty, T elementToFind)
+        where T : Object
+    {
+        if (!arrayProperty.isArray)
+            throw new UnityException("SerializedProperty " + arrayProperty.name + " is not an array.");
+
+        if (!elementToFind)
+            throw new UnityException("Finding a null element is not supported using this method.");
 
         for (int i = 0; i < arrayProperty.arraySize; i++)
         {
             SerializedProperty elementProperty = arrayProperty.GetArrayElementAtIndex(i);
 
-            if (elementProperty.objectReferenceValue == elementToRemove)
+            if (elementProperty.objectReferenceValue == elementToFind)
             {
-                arrayProperty.RemoveFromObjectArrayAt(i);
-                return;
+                return i;
             }
         }
 
-        throw new UnityException("Element " + elementToRemove.name + "was not found in property " + arrayProperty.name);
+        return -1;
+
+        throw new UnityException("Element " + elementToFind.name + "was not found in property " + arrayProperty.name);
+    }
+
+    public static void MoveObjectInArray(this SerializedProperty arrayProperty, int srcIndex, int dstIndex)
+    {
+        if (!arrayProperty.isArray)
+            throw new UnityException("SerializedProperty " + arrayProperty.name + " is not an array.");
+
+
+        Reaction reaction = (Reaction) arrayProperty.GetArrayElementAtIndex(srcIndex).objectReferenceValue;
+        arrayProperty.RemoveFromObjectArrayAt(srcIndex);
+        arrayProperty.AddToObjectArrayAt(reaction, dstIndex);
+
+         
+        return;
     }
 }

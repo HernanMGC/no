@@ -7,7 +7,6 @@ public class ReactionCollection : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("ReactionCollection.Start()");
         for (int i = 0; i < reactions.Length; i++)
         {
             DelayedReaction delayedReaction = reactions[i] as DelayedReaction;
@@ -22,7 +21,6 @@ public class ReactionCollection : MonoBehaviour
 
     public void React()
     {
-        Debug.Log("ReactionCollection.React()");
         for (int i = 0; i < reactions.Length; i++)
         {
             DelayedReaction delayedReaction = reactions[i] as DelayedReaction;

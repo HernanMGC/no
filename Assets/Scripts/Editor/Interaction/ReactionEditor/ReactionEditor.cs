@@ -33,11 +33,26 @@ public abstract class ReactionEditor : Editor
 
         EditorGUILayout.BeginHorizontal();
 
+        int currentIndex;
         showReaction = EditorGUILayout.Foldout(showReaction, GetFoldoutLabel());
 
         if (GUILayout.Button("-", GUILayout.Width(buttonWidth)))
         {
             reactionsProperty.RemoveFromObjectArray(reaction);
+        }
+        if (GUILayout.Button("^", GUILayout.Width(buttonWidth)))
+        {
+            currentIndex = reactionsProperty.GetIndexOfObjectInArray(reaction);
+            //reactionsProperty.RemoveFromObjectArrayAt(currentIndex);
+            //reactionsProperty.AddToObjectArrayAt(reaction, currentIndex - 1);
+            reactionsProperty.MoveObjectInArray(currentIndex, currentIndex - 1);
+        }
+        if (GUILayout.Button("v", GUILayout.Width(buttonWidth)))
+        {
+            currentIndex = reactionsProperty.GetIndexOfObjectInArray(reaction);
+            //reactionsProperty.RemoveFromObjectArrayAt(currentIndex);
+            //reactionsProperty.AddToObjectArrayAt(reaction, currentIndex + 1);
+            reactionsProperty.MoveObjectInArray(currentIndex, currentIndex + 1);
         }
         EditorGUILayout.EndHorizontal();
 

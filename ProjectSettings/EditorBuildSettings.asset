@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dorm.unity
     guid: e18f4827443480b43918ccf3eec997b8
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: b3c18ef79c37d1946af3ad42291cc5e1
   m_configObjects: {}
