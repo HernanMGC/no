@@ -102,11 +102,22 @@ public static class SerializedPropertyExtensions
             throw new UnityException("SerializedProperty " + arrayProperty.name + " is not an array.");
 
 
-        Reaction reaction = (Reaction) arrayProperty.GetArrayElementAtIndex(srcIndex).objectReferenceValue;
-        arrayProperty.RemoveFromObjectArrayAt(srcIndex);
-        arrayProperty.AddToObjectArrayAt(reaction, dstIndex);
+		//Reaction reaction = (Reaction) arrayProperty.GetArrayElementAtIndex(srcIndex).objectReferenceValue;
 
-         
-        return;
+		//arrayProperty.RemoveFromObjectArrayAt(srcIndex);
+		// arrayProperty.AddToObjectArrayAt(reaction, dstIndex);
+		arrayProperty.serializedObject.Update();
+
+		EditorGUI.BeginChangeCheck();
+		Reaction reaction = (Reaction) arrayProperty.GetArrayElementAtIndex(dstIndex).objectReferenceValue;
+		arrayProperty.GetArrayElementAtIndex(dstIndex).objectReferenceValue = arrayProperty.GetArrayElementAtIndex(srcIndex).objectReferenceValue;
+		arrayProperty.GetArrayElementAtIndex(srcIndex).objectReferenceValue = reaction;
+		if (EditorGUI.EndChangeCheck())
+		{
+			// arr.Refresh();
+		}
+		arrayProperty.serializedObject.ApplyModifiedProperties();
+
+		return;
     }
 }

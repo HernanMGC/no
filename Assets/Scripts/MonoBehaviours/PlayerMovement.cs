@@ -86,11 +86,11 @@ public class PlayerMovement : MonoBehaviour
 
 		if ((this.destinationPosition.x - this.currentPosition.x) >= 0)
 		{
-			this.characterSprite.transform.localScale = new Vector3(Math.Abs(this.characterSprite.transform.localScale.x), this.characterSprite.transform.localScale.y, this.characterSprite.transform.localScale.z);
+			this.characterSprite.transform.localScale = new Vector3(-Math.Abs(this.characterSprite.transform.localScale.x), this.characterSprite.transform.localScale.y, this.characterSprite.transform.localScale.z);
 
 		} else
 		{
-			this.characterSprite.transform.localScale = new Vector3(-Math.Abs(this.characterSprite.transform.localScale.x), this.characterSprite.transform.localScale.y, this.characterSprite.transform.localScale.z);
+			this.characterSprite.transform.localScale = new Vector3(Math.Abs(this.characterSprite.transform.localScale.x), this.characterSprite.transform.localScale.y, this.characterSprite.transform.localScale.z);
 
 		}
 	}

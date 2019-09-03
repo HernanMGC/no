@@ -65,7 +65,7 @@ public abstract class ReactionEditor : Editor
         EditorGUILayout.EndVertical();
 
         serializedObject.ApplyModifiedProperties();
-    }
+	}
 
 
     public static Reaction CreateReaction(Type reactionType)
