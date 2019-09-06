@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
 
-[CustomEditor(typeof(ReactionCollection)), CanEditMultipleObjects]
+[CustomEditor(typeof(ReactionCollection))]
 public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Reaction>
 {
     private ReactionCollection reactionCollection;

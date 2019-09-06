@@ -1,4 +1,8 @@
-﻿public class SceneReaction : Reaction
+﻿using UnityEngine;
+using System;
+
+[Serializable]
+public class SceneReaction : Reaction
 {
     public string sceneName;
     public string startingPointInLoadedScene;

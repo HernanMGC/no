@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 
+[Serializable]
 public class AnimationReaction : DelayedReaction
 {
     public Animator animator;

@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 
-[CustomEditor(typeof(GameObjectReaction))]
-public class GameObjectReactionEditor : ReactionEditor
+[CustomPropertyDrawer(typeof(GameObjectReaction))]
+public class GameObjectReactionEditor : PropertyDrawer
 {
-    protected override string GetFoldoutLabel()
-    {
-        return "GameObject Reaction";
-    }
+//    protected override string GetFoldoutLabel()
+//    {
+//        return "GameObject Reaction";
+//    }
 }

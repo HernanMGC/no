@@ -1,4 +1,8 @@
-﻿public class LostItemReaction : DelayedReaction
+﻿using UnityEngine;
+using System;
+
+[Serializable]
+public class LostItemReaction : DelayedReaction
 {
     public Item item;
 

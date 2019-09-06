@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 
 [CustomEditor(typeof(AudioReaction))]
-public class AudioReactionEditor : ReactionEditor
+public class AudioReactionEditor : PropertyDrawer
 {
-    protected override string GetFoldoutLabel()
-    {
-        return "Audio Reaction";
-    }
+    //protected override string GetFoldoutLabel()
+    //{
+    //    return "Audio Reaction";
+    //}
 }
