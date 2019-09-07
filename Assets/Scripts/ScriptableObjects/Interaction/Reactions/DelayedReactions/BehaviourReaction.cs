@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System;
 
-[Serializable]
 public class BehaviourReaction : DelayedReaction
 {
     public Behaviour behaviour;

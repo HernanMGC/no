@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 
-[CustomPropertyDrawer(typeof(LostItemReaction))]
-public class LostItemReactionEditor : PropertyDrawer
+[CustomEditor(typeof(LostItemReaction))]
+public class LostItemReactionEditor : ReactionEditor
 {
-    //protected override string GetFoldoutLabel()
-    //{
-    //    return "Lost Item Reaction";
-    //}
+    protected override string GetFoldoutLabel()
+    {
+        return "Lost Item Reaction";
+    }
 }

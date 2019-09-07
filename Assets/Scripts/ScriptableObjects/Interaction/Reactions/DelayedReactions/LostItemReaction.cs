@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System;
-
-[Serializable]
-public class LostItemReaction : DelayedReaction
+﻿public class LostItemReaction : DelayedReaction
 {
     public Item item;
 

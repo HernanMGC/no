@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 
 [CustomEditor(typeof(BehaviourReaction))]
-public class BehaviourReactionEditor : PropertyDrawer
+public class BehaviourReactionEditor : ReactionEditor
 {
-    //protected override string GetFoldoutLabel()
-    //{
-    //    return "Behaviour Reaction";
-    //}
+    protected override string GetFoldoutLabel()
+    {
+        return "Behaviour Reaction";
+    }
 }

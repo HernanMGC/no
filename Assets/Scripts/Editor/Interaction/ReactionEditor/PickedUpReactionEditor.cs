@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 
-[CustomPropertyDrawer(typeof(PickedUpItemReaction))]
-public class PickedUpItemReactionEditor : PropertyDrawer
+[CustomEditor(typeof(PickedUpItemReaction))]
+public class PickedUpItemReactionEditor : ReactionEditor
 {
-    //    protected override string GetFoldoutLabel()
-    //    {
-    //        return "Picked Up Item Reaction";
-    //    }
+    protected override string GetFoldoutLabel()
+    {
+        return "Picked Up Item Reaction";
+    }
 }

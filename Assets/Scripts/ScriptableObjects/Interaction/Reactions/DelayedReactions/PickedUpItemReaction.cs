@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System;
-
-[Serializable]
-public class PickedUpItemReaction : DelayedReaction
+﻿public class PickedUpItemReaction : DelayedReaction
 {
     public Item item;
 

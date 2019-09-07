@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System;
-
-[Serializable]
-public class ConditionReaction : Reaction
+﻿public class ConditionReaction : Reaction
 {
     public Condition condition;
     public bool satisfied;

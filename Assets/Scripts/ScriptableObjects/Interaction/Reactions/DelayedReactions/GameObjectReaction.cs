@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System;
 
-[Serializable]
 public class GameObjectReaction : DelayedReaction
 {
     public GameObject gameObject;
