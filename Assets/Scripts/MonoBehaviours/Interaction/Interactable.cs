@@ -16,6 +16,7 @@ public class Interactable : MonoBehaviour
 				return;
 		}
 
+		Debug.Log(defaultReactionCollection);
 		defaultReactionCollection.React();
 	}
 }
