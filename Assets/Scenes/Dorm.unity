@@ -147,6 +147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,6 +567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: POSInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
         type: 3}
@@ -1381,6 +1391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CVInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1818,8 +1833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc757420f436ce408578c520f3269c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Kitchen
-  startingPointInLoadedScene: KitchenStartingPoint
+  sceneName: DiningRoom
+  startingPointInLoadedScene: DiningRoomStartingPoint
   playerSaveData: {fileID: 11400000, guid: 23400a28647667e4eadd29373cf4ec9f, type: 2}
 --- !u!114 &1505514385
 MonoBehaviour:
@@ -1971,6 +1986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChickenInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
         type: 3}
@@ -2247,6 +2267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorToKitchenInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2372,7 +2397,8 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 67.81021
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6123004634636491562, guid: 0449a746152c668429d54e933cd17ab5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0449a746152c668429d54e933cd17ab5, type: 3}
 --- !u!114 &1862727429 stripped
 MonoBehaviour:
@@ -2380,12 +2406,47 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1862727428}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1862727430}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6749f8f8f7d6e248a458b158bd7b75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1862727430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862727428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1862727431
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862727430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 13, y: -28.6}
+      - {x: 10.46, y: 29.25}
+      - {x: -9.68, y: 35.7}
+      - {x: -10.05, y: -24.93}
 --- !u!1 &1865024889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2801,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PotionInteractable
       objectReference: {fileID: 0}
+    - target: {fileID: 704948137973366206, guid: 0449a746152c668429d54e933cd17ab5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123536504957697441, guid: 0449a746152c668429d54e933cd17ab5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2861,6 +2927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MessageCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477719315727443106, guid: e9e3a47f9bbc3d94c8269294a104bbec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2027849204640702980, guid: e9e3a47f9bbc3d94c8269294a104bbec,
         type: 3}
@@ -2986,6 +3057,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7247999701113157414, guid: f6d297f477d7ff644900d8d41252653f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7247999701113157415, guid: f6d297f477d7ff644900d8d41252653f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3107,6 +3183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DormWalkableArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283512181192497401, guid: 71e9cdf12d83a3a47a9158fa686cce94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7283512181192497400, guid: 71e9cdf12d83a3a47a9158fa686cce94,
         type: 3}
